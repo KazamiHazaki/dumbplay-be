@@ -1,7 +1,10 @@
 FROM node:12
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
+WORKDIR /home/app
 COPY . .
+RUN npm install
+#RUN npm install sequelize
+#RUN npm install sequelize --save 
+#RUN sequelize db:create
+#RUN sequelize db:migrate
 EXPOSE 5000
 CMD [ "npm", "start" ]
